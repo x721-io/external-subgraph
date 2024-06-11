@@ -1,0 +1,29 @@
+type ERC1155Token @entity {
+  id: ID!
+  contract: String!
+  tokenID: BigInt!
+  tokenURI: String!
+  balance: BigInt!
+  owner: [ERC1155Balance!]! @derivedFrom(field: "token")
+  createdAt: BigInt!
+}
+
+type ERC1155Balance @entity {
+  id: ID!
+  owner: String!
+  balance: BigInt!
+  burnQuantity: BigInt!
+  token: ERC1155Token!
+  lastUpdated: BigInt!
+  stakedAmount: BigInt!
+}
+
+type ERC721Token @entity {
+  id: ID!
+  contract: String!
+  tokenID: BigInt!
+  tokenURI: String!
+  owner: String!
+  createdAt: BigInt!
+  updatedAt: BigInt!
+}

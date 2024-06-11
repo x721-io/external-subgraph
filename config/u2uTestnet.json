@@ -1,0 +1,13 @@
+{
+    "network": "testnet",
+    "erc721Avatar": {
+      "address": "0x40432f201FAd1ed97352e807522454836178Fc5F",
+      "startBlock": "22473900",
+      "name" : "AVATAR_NFT"
+    },
+    "erc1155Food": {
+      "address": "0x176581dBb0A5D0CcbB7395f2AAfD63E52e3936D7",
+      "startBlock": "17929869",
+      "name" : "FOOD_NFT"
+    }
+}
