@@ -5,6 +5,11 @@
       "startBlock": "22473900",
       "name" : "AVATAR_NFT"
     },
+    "erc721TShirt": {
+      "address": "0xF64Fb1CA7F302739C509C4a8346bA48bcaCab845",
+      "startBlock": "25948835",
+      "name" : "U2U_TSHIRT_2024"
+    },
     "erc1155Food": {
       "address": "0x176581dBb0A5D0CcbB7395f2AAfD63E52e3936D7",
       "startBlock": "17929869",
