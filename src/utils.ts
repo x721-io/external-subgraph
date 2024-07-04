@@ -1,11 +1,11 @@
 import { ERC1155Token, ERC1155Balance } from "../generated/schema";
 import { BigInt } from "@graphprotocol/graph-ts/index"
 
-export function fetchOrCreateNFTOwnerBalance(tokenId: string, owner: string, timestamp: BigInt): ERC1155Balance {
-    let id = generateCombineKey([tokenId, owner]);
+export function fetchOrCreateNFTOwnerBalance(tokenId: string, owner: string, timestamp: BigInt, contract: string): ERC1155Balance {
+    let id = generateCombineKey([tokenId, owner, contract]);
     let nftOwnerBalance = ERC1155Balance.load(id);
     if (nftOwnerBalance == null) {
-      nftOwnerBalance = new ERC1155Balance(tokenId);
+      nftOwnerBalance = new ERC1155Balance(id);
       nftOwnerBalance.id = id;
       nftOwnerBalance.owner = owner;
       nftOwnerBalance.balance = BigInt.fromI32(0);
@@ -23,10 +23,11 @@ export function fetchOrCreateNFTOwnerBalance(tokenId: string, owner: string, tim
   }
 
   export function fetchOrCreateNFT1155(tokenId: string, timestamp: BigInt, contract: string): ERC1155Token {
-    let nft = ERC1155Token.load(tokenId);
+  let id = generateCombineKey([contract, tokenId]);
+    let nft = ERC1155Token.load(id);
     if (nft == null) {
-      nft = new ERC1155Token(tokenId);
-      nft.id = tokenId;
+      nft = new ERC1155Token(id);
+      nft.id = id;
       nft.contract = contract;
       nft.tokenID = BigInt.fromString(tokenId)
       nft.tokenURI = '';

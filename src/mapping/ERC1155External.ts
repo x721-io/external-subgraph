@@ -1,6 +1,6 @@
 import { TransferBatch, TransferSingle, ERC1155, URI } from "../../generated/ERC1155External/ERC1155";
 import {DEAD, ZERO} from "../const";
-import { fetchOrCreateNFT1155, fetchOrCreateNFTOwnerBalance } from "../utils";
+import { fetchOrCreateNFT1155, fetchOrCreateNFTOwnerBalance, generateCombineKey } from "../utils";
 import { log } from "@graphprotocol/graph-ts";
 import { ERC1155Token } from "../../generated/schema";
 import { BigInt } from "@graphprotocol/graph-ts"
@@ -16,8 +16,8 @@ export function handleTransferBatch(event: TransferBatch): void {
 export function tokenTransfer(event: TransferSingle): void {
     let nft = fetchOrCreateNFT1155(event.params.id.toString(), event.block.timestamp, event.address.toHexString());
   
-    let nftOwnerBalanceFrom = fetchOrCreateNFTOwnerBalance(event.params.id.toString(), event.params.from.toHexString(), event.block.timestamp);
-    let nftOwnerBalanceTo = fetchOrCreateNFTOwnerBalance(event.params.id.toString(), event.params.to.toHexString(), event.block.timestamp);
+    let nftOwnerBalanceFrom = fetchOrCreateNFTOwnerBalance(event.params.id.toString(), event.params.from.toHexString(), event.block.timestamp,event.address.toHexString());
+    let nftOwnerBalanceTo = fetchOrCreateNFTOwnerBalance(event.params.id.toString(), event.params.to.toHexString(), event.block.timestamp, event.address.toHexString());
   
     if (event.params.from == event.params.to) {
       return;
@@ -52,14 +52,15 @@ export function tokenTransfer(event: TransferSingle): void {
   }
 
   export function handleURI(event: URI): void {
-    let uniceran = ERC1155Token.load(event.params.id.toString());
+    let id = generateCombineKey([event.address.toHexString(), event.params.id.toString()]);
+    let uniceran = ERC1155Token.load(id);
   
     if (uniceran != null) {
       uniceran.tokenURI = event.params.value.toString();
       uniceran.save();
     }
     else {
-        uniceran = new ERC1155Token(event.params.id.toString());
+        uniceran = new ERC1155Token(id);
         uniceran.tokenID = event.params.id
         uniceran.tokenURI = event.params.value;
         uniceran.contract = event.address.toHexString();
@@ -73,8 +74,8 @@ export function tokenTransferBatch(event: TransferBatch): void {
     for (let i = 0; i < event.params.ids.length; i++) {
       let nft = fetchOrCreateNFT1155(event.params.ids[i].toString(), event.block.timestamp, event.address.toHexString());
   
-    let nftOwnerBalanceFrom = fetchOrCreateNFTOwnerBalance(event.params.ids[i].toString(), event.params.from.toHexString(), event.block.timestamp);
-    let nftOwnerBalanceTo = fetchOrCreateNFTOwnerBalance(event.params.ids[i].toString(), event.params.to.toHexString(), event.block.timestamp);
+    let nftOwnerBalanceFrom = fetchOrCreateNFTOwnerBalance(event.params.ids[i].toString(), event.params.from.toHexString(), event.block.timestamp, event.address.toHexString());
+    let nftOwnerBalanceTo = fetchOrCreateNFTOwnerBalance(event.params.ids[i].toString(), event.params.to.toHexString(), event.block.timestamp, event.address.toHexString());
   
     if (event.params.from == event.params.to) {
       return;

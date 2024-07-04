@@ -1,13 +1,15 @@
 import { ERC721Token} from './../../generated/schema';
 import {ERC721, Transfer, } from "../../generated/ERC721External/ERC721";
+import { generateCombineKey } from '../utils';
 
 export function handleTransfer(event: Transfer): void {
   tokenTransfer(event);
 }
 export function tokenTransfer(event: Transfer): void {
-  let token = ERC721Token.load(event.params.tokenId.toString())
+  let id = generateCombineKey([event.address.toHexString(), event.params.tokenId.toString()]);
+  let token = ERC721Token.load(id)
   if (!token) {
-    token = new ERC721Token(event.params.tokenId.toString())
+    token = new ERC721Token(id)
     token.tokenID = event.params.tokenId
     token.contract = event.address.toHexString();
     token.tokenURI = ""
