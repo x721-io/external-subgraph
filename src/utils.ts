@@ -3,6 +3,7 @@ import { BigInt } from "@graphprotocol/graph-ts/index"
 
 export function fetchOrCreateNFTOwnerBalance(tokenId: string, owner: string, timestamp: BigInt, contract: string): ERC1155Balance {
     let id = generateCombineKey([tokenId, owner, contract]);
+    let nft = fetchOrCreateNFT1155(tokenId, timestamp , contract);
     let nftOwnerBalance = ERC1155Balance.load(id);
     if (nftOwnerBalance == null) {
       nftOwnerBalance = new ERC1155Balance(id);
@@ -11,10 +12,11 @@ export function fetchOrCreateNFTOwnerBalance(tokenId: string, owner: string, tim
       nftOwnerBalance.balance = BigInt.fromI32(0);
       nftOwnerBalance.burnQuantity = BigInt.fromI32(0);
       nftOwnerBalance.stakedAmount = BigInt.fromI32(0);
-      nftOwnerBalance.token = tokenId;
+      nftOwnerBalance.token = nft.id;
       nftOwnerBalance.lastUpdated = timestamp;
       nftOwnerBalance.owner = owner
     }
+    nft.save();
     return nftOwnerBalance;
   }
 
