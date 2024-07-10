@@ -10,6 +10,11 @@
       "startBlock": "25948835",
       "name" : "U2U_TSHIRT_2024"
     },
+    "erc721Hamster": {
+      "address": "0x283BD10A2f624f41c66fc70286D3d4a02A565bf8",
+      "startBlock": "27505104",
+      "name" : "U2U_HAMSTER_2024"
+    },
     "erc1155Food": {
       "address": "0x176581dBb0A5D0CcbB7395f2AAfD63E52e3936D7",
       "startBlock": "17929869",

@@ -45,6 +45,27 @@ dataSources:
           handler: handleTransfer
       file: ./src/mapping/ERC721External.ts
   - kind: ethereum
+    name: ERC721Hamster
+    network: testnet
+    source:
+      address: "{{erc721Hamster.address}}"
+      abi: ERC721
+      startBlock: {{erc721Hamster.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ERC721Token
+        - Owner
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/mapping/ERC721External.ts
+  - kind: ethereum
     name: ERC1155External
     network: testnet
     source:
