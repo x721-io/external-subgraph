@@ -19,5 +19,10 @@
       "address": "0x176581dBb0A5D0CcbB7395f2AAfD63E52e3936D7",
       "startBlock": "17929869",
       "name" : "FOOD_NFT"
+    },
+    "erc721HSH": {
+      "address": "0x5cEEFBc9382D646F5a7673d5b3BF79dAB84DC711",
+      "startBlock": "27505104",
+      "name" : "U2U_HSH_2024"
     }
 }
