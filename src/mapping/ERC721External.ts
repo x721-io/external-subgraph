@@ -7,7 +7,7 @@ export function handleTransfer(event: Transfer): void {
   tokenTransfer(event);
 }
 export function tokenTransfer(event: Transfer): void {
-  if (event.params.to.toHexString() != ContractAddress.erc721marketplace.toLowerCase()) {
+  if (event.params.to.toHexString() == ContractAddress.erc721marketplace.toLowerCase()) {
     return;
   }
   let id = generateCombineKey([event.address.toHexString(), event.params.tokenId.toString()]);

@@ -15,7 +15,7 @@ export function handleTransferBatch(event: TransferBatch): void {
 }
 
 export function tokenTransfer(event: TransferSingle): void {
-    if (event.params.to.toHexString() != ContractAddress.erc1155marketplace.toLowerCase()) {
+    if (event.params.to.toHexString() == ContractAddress.erc1155marketplace.toLowerCase()) {
       return;
     }
     let nft = fetchOrCreateNFT1155(event.params.id.toString(), event.block.timestamp, event.address.toHexString());
