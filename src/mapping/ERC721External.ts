@@ -22,7 +22,7 @@ export function tokenTransfer(event: Transfer): void {
     }
   }
   token.updatedAt = event.block.timestamp
-  if (event.params.to.toHexString() != ContractAddress.erc721marketplace) {
+  if (event.params.to.toHexString() != ContractAddress.erc721marketplace.toLowerCase()) {
     token.owner = event.params.to.toHexString()
   }
   token.save();
