@@ -1,6 +1,7 @@
 import { ERC721Token} from './../../generated/schema';
 import {ERC721, Transfer, } from "../../generated/ERC721External/ERC721";
 import { generateCombineKey } from '../utils';
+import { ContractAddress } from '../enum';
 
 export function handleTransfer(event: Transfer): void {
   tokenTransfer(event);
@@ -21,6 +22,8 @@ export function tokenTransfer(event: Transfer): void {
     }
   }
   token.updatedAt = event.block.timestamp
-  token.owner = event.params.to.toHexString()
+  if (event.params.from.toHexString() != ContractAddress.erc721marketplace) {
+    token.owner = event.params.to.toHexString()
+  }
   token.save();
 }
