@@ -1,19 +1,14 @@
 {
   "network": "testnet",
-  "erc721Avatar": {
-    "address": "0x40432f201FAd1ed97352e807522454836178Fc5F",
-    "startBlock": "22473900",
-    "name" : "AVATAR_NFT"
-  },
   "erc721HSH": {
     "address": "0x807770a57C4a1379AF99660b9124aa2c599CF679",
     "startBlock": "27505104",
     "name" : "U2U_HSH_2024"
   },
   "erc721marketplace": {
-    "address": "0xcC84E04388B201b49Bb3a5C9cc6Bf7907024A589"
+    "address": "0x77700afc1183e520f6ce28e5ee95411cc88cf36b"
   },
   "erc1155marketplace": {
-    "address": "0xe6B23f494ca1e49fE76cc3A606bfbAB45585AB43"
+    "address": "0x46948c71e0b09ddddc8e7feed92332dd5b19b5fa"
   }
 }
