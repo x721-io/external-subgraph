@@ -7,6 +7,12 @@ export function handleTransfer(event: Transfer): void {
   tokenTransfer(event);
 }
 export function tokenTransfer(event: Transfer): void {
+  if (event.params.to.toHexString() == ContractAddress.erc721marketplace.toLowerCase()) {
+    return;
+  }
+  if (event.params.from.toHexString() == ContractAddress.erc721marketplace.toLowerCase()) {
+    return;
+  }
   let id = generateCombineKey([event.address.toHexString(), event.params.tokenId.toString()]);
   let token = ERC721Token.load(id)
   if (!token) {
@@ -21,9 +27,7 @@ export function tokenTransfer(event: Transfer): void {
       token.tokenURI = tokenURIResult.value;
     }
   }
-  if (event.params.to.toHexString() != ContractAddress.erc721marketplace.toLowerCase()) {
-    token.updatedAt = event.block.timestamp
-    token.owner = event.params.to.toHexString()
-  }
+  token.updatedAt = event.block.timestamp
+  token.owner = event.params.to.toHexString()
   token.save();
 }
