@@ -5,6 +5,11 @@
     "startBlock": "27505104",
     "name" : "U2U_HSH_2024"
   },
+  "erc721TShirt": {
+    "address": "0xF64Fb1CA7F302739C509C4a8346bA48bcaCab845",
+    "startBlock": "25948835",
+    "name" : "U2U_TSHIRT_2024"
+  },
   "erc721marketplace": {
     "address": "0x77700afc1183e520f6ce28e5ee95411cc88cf36b"
   },
