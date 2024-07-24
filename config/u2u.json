@@ -10,6 +10,11 @@
     "startBlock": "25948835",
     "name" : "U2U_TSHIRT_2024"
   },
+  "erc721EnnuiCat": {
+    "address": "0xB3B77d1da0664a3f0b5c9cdbE58684b81E38b3b8",
+    "startBlock": "27505104",
+    "name" : "U2U_HSH_2024"
+  },
   "erc721marketplace": {
     "address": "0x77700afc1183e520f6ce28e5ee95411cc88cf36b"
   },
