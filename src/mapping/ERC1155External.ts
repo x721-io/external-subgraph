@@ -18,9 +18,9 @@ export function tokenTransfer(event: TransferSingle): void {
   if (event.params.to.toHexString() == ContractAddress.erc1155marketplace.toLowerCase()) {
     return;
   }
-  if (event.params.from.toHexString() == ContractAddress.erc1155marketplace.toLowerCase()) {
-    return;
-  }
+  // if (event.params.from.toHexString() == ContractAddress.erc1155marketplace.toLowerCase()) {
+  //   return;
+  // }
   
     let nft = fetchOrCreateNFT1155(event.params.id.toString(), event.block.timestamp, event.address.toHexString());
   
@@ -82,9 +82,9 @@ export function tokenTransferBatch(event: TransferBatch): void {
   if (event.params.to.toHexString() == ContractAddress.erc1155marketplace.toLowerCase()) {
     return;
   }
-  if (event.params.from.toHexString() == ContractAddress.erc1155marketplace.toLowerCase()) {
-    return;
-  }
+  // if (event.params.from.toHexString() == ContractAddress.erc1155marketplace.toLowerCase()) {
+  //   return;
+  // }
     for (let i = 0; i < event.params.ids.length; i++) {
       let nft = fetchOrCreateNFT1155(event.params.ids[i].toString(), event.block.timestamp, event.address.toHexString());
   

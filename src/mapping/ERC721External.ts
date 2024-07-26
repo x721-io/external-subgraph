@@ -10,9 +10,9 @@ export function tokenTransfer(event: Transfer): void {
   if (event.params.to.toHexString() == ContractAddress.erc721marketplace.toLowerCase()) {
     return;
   }
-  if (event.params.from.toHexString() == ContractAddress.erc721marketplace.toLowerCase()) {
-    return;
-  }
+  // if (event.params.from.toHexString() == ContractAddress.erc721marketplace.toLowerCase()) {
+  //   return;
+  // }
   let id = generateCombineKey([event.address.toHexString(), event.params.tokenId.toString()]);
   let token = ERC721Token.load(id)
   if (!token) {
@@ -20,14 +20,18 @@ export function tokenTransfer(event: Transfer): void {
     token.tokenID = event.params.tokenId
     token.contract = event.address.toHexString();
     token.tokenURI = ""
-    token.createdAt = event.block.timestamp
+    if (event.params.from.toHexString() != ContractAddress.erc721marketplace.toLowerCase()) {
+      token.createdAt = event.block.timestamp
+    }
     let nftContract = ERC721.bind(event.address)
     let tokenURIResult = nftContract.try_tokenURI(token.tokenID)
     if (!tokenURIResult.reverted) {
       token.tokenURI = tokenURIResult.value;
     }
   }
-  token.updatedAt = event.block.timestamp
+  if (event.params.from.toHexString() != ContractAddress.erc721marketplace.toLowerCase()) {
+    token.updatedAt = event.block.timestamp
+  }
   token.owner = event.params.to.toHexString()
   token.save();
 }
