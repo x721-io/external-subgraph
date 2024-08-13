@@ -15,6 +15,11 @@
     "startBlock": "27505104",
     "name" : "U2U_HSH_2024"
   },
+  "erc721Sloth": {
+    "address": "0x0DfCd1875DF81Ee42815475942BB83101f957300",
+    "startBlock": "31285314",
+    "name" : "U2U_Slot"
+  },
   "erc721marketplace": {
     "address": "0x77700afc1183e520f6ce28e5ee95411cc88cf36b"
   },

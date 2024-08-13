@@ -24,14 +24,7 @@
       "address": "0x807770a57C4a1379AF99660b9124aa2c599CF679",
       "startBlock": "27505104",
       "name" : "U2U_HSH_2024"
-    },
-
-    "erc721EnnuiCatTest": {
-      "address": "0x4d5A3940F7A6da29B925a1C7d9f9400c6b7b3163",
-      "startBlock": "31258295",
-      "name" : "U2U_EnnuiCatTest_2024"
-    },
-    
+    },    
     "erc721marketplace": {
       "address": "0xcC84E04388B201b49Bb3a5C9cc6Bf7907024A589"
     },
