@@ -87,6 +87,29 @@ dataSources:
           handler: handleTransfer
       file: ./src/mapping/ERC721External.ts
   - kind: ethereum
+    name: ERC721ENNUICATTEST
+    network: testnet
+    source:
+      address: "{{erc721EnnuiCatTest.address}}"
+      abi: ERC721
+      startBlock: {{erc721EnnuiCatTest.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ERC721Token
+        - Owner
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/mapping/ERC721External.ts
+
+
+  - kind: ethereum
     name: ERC1155External
     network: testnet
     source:
