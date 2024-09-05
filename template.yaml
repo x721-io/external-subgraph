@@ -87,6 +87,27 @@ dataSources:
           handler: handleTransfer
       file: ./src/mapping/ERC721External.ts
   - kind: ethereum
+    name: U2U_BARK
+    network: testnet
+    source:
+      address: "{{erc721Bark.address}}"
+      abi: ERC721
+      startBlock: {{erc721Bark.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ERC721Token
+        - Owner
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/mapping/ERC721External.ts
+  - kind: ethereum
     name: ERC1155External
     network: testnet
     source:
