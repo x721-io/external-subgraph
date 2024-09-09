@@ -26,8 +26,8 @@
       "name" : "U2U_HSH_2024"
     }, 
     "erc721Bark": {
-      "address": "0xbD34D398D02110B0516B6c1e3E96F58118490480",
-      "startBlock": "33471773",
+      "address": "0xDEB7ed5BcFD1f5c032a7C4C627ac6E7A0354871E",
+      "startBlock": "34042119",
       "name" : "U2U_BARK"
     },      
     "erc721marketplace": {
