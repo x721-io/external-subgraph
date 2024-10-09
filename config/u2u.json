@@ -20,6 +20,11 @@
     "startBlock": "31285314",
     "name" : "U2U_Slot"
   },
+  "erc721dogxu2u": {
+    "address": "0xb2cC2dFB88B9f43Eb61D185A93C655F89DB16f97",
+    "startBlock": "38107079",
+    "name" : "U2U_Dogx_U2U"
+  },
   "erc721marketplace": {
     "address": "0x77700afc1183e520f6ce28e5ee95411cc88cf36b"
   },
