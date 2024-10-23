@@ -4,7 +4,7 @@ schema:
 dataSources:
   - kind: ethereum
     name: ERC721External
-    network: testnet
+    network: {{network}}
     source:
       address: "{{erc721Avatar.address}}"
       abi: ERC721
@@ -25,7 +25,7 @@ dataSources:
       file: ./src/mapping/ERC721External.ts
   - kind: ethereum
     name: ERC721TShirt
-    network: testnet
+    network: {{network}}
     source:
       address: "{{erc721TShirt.address}}"
       abi: ERC721
@@ -46,7 +46,7 @@ dataSources:
       file: ./src/mapping/ERC721External.ts
   - kind: ethereum
     name: ERC721Hamster
-    network: testnet
+    network: {{network}}
     source:
       address: "{{erc721Hamster.address}}"
       abi: ERC721
@@ -67,7 +67,7 @@ dataSources:
       file: ./src/mapping/ERC721External.ts
   - kind: ethereum
     name: ERC721HSH
-    network: testnet
+    network: {{network}}
     source:
       address: "{{erc721HSH.address}}"
       abi: ERC721
@@ -88,7 +88,7 @@ dataSources:
       file: ./src/mapping/ERC721External.ts
   - kind: ethereum
     name: U2U_BARK
-    network: testnet
+    network: {{network}}
     source:
       address: "{{erc721Bark.address}}"
       abi: ERC721
@@ -109,7 +109,7 @@ dataSources:
       file: ./src/mapping/ERC721External.ts
   - kind: ethereum
     name: ERC1155External
-    network: testnet
+    network: {{network}}
     source:
       address: "{{erc1155Food.address}}"
       abi: ERC1155
