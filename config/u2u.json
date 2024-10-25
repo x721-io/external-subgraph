@@ -31,9 +31,9 @@
     "name" : "U2U_BARK"
   },       
   "erc721marketplace": {
-    "address": "0xcC84E04388B201b49Bb3a5C9cc6Bf7907024A589"
+    "address": "0x52B9AbD261bB733b44b06148FD30F40290A6E017"
   },
   "erc1155marketplace": {
-    "address": "0xe6B23f494ca1e49fE76cc3A606bfbAB45585AB43"
+    "address": "0x571E3b002Ee611Fb0Fd240C0cA2C85B6DD4E7E33"
   }
 }
