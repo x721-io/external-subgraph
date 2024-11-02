@@ -5,11 +5,6 @@
       "startBlock": "22473900",
       "name" : "AVATAR_NFT"
     },
-    "erc721TShirt": {
-      "address": "0xF64Fb1CA7F302739C509C4a8346bA48bcaCab845",
-      "startBlock": "25948835",
-      "name" : "U2U_TSHIRT_2024"
-    },
     "erc721Hamster": {
       "address": "0x91f2f3E0daE8446327c54FB4c974aB5A72b82445",
       "startBlock": "27505104",
