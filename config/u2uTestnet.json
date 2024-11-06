@@ -20,6 +20,11 @@
       "startBlock": "27505104",
       "name" : "U2U_HSH_2024"
     }, 
+    "erc721Dun": {
+      "address": "0x41B62074667127543E46C915E37aBf05e8F699c6",
+      "startBlock": "37924468",
+      "name" : "DogX x U2U Network Test"
+    }, 
     "erc721Bark": {
       "address": "0x79AAF3938F22ed209f4b10D278797e1A674D475F",
       "startBlock": "34320503",
