@@ -1,39 +1,29 @@
 {
     "network": "testnet",
-    "erc721Avatar": {
-      "address": "0x40432f201FAd1ed97352e807522454836178Fc5F",
-      "startBlock": "22473900",
-      "name" : "AVATAR_NFT"
-    },
-    "erc721Hamster": {
-      "address": "0x91f2f3E0daE8446327c54FB4c974aB5A72b82445",
-      "startBlock": "27505104",
-      "name" : "U2U_HAMSTER_2024"
-    },
-    "erc1155Food": {
-      "address": "0x176581dBb0A5D0CcbB7395f2AAfD63E52e3936D7",
-      "startBlock": "17929869",
-      "name" : "FOOD_NFT"
+    "erc721Slot": {
+      "address": "0x0dfcd1875df81ee42815475942bb83101f957300",
+      "startBlock": "31285314",
+      "name" : "Slot"
     },
     "erc721HSH": {
-      "address": "0x807770a57C4a1379AF99660b9124aa2c599CF679",
-      "startBlock": "27505104",
+      "address": "0x807770a57c4a1379af99660b9124aa2c599cf679",
+      "startBlock": "28277048",
       "name" : "U2U_HSH_2024"
     }, 
     "erc721Dun": {
-      "address": "0x41B62074667127543E46C915E37aBf05e8F699c6",
-      "startBlock": "37924468",
-      "name" : "DogX x U2U Network Test"
+      "address": "0xb2cc2dfb88b9f43eb61d185a93c655f89db16f97",
+      "startBlock": "38107079",
+      "name" : "DogX x U2U Network"
     }, 
-    "erc721Bark": {
-      "address": "0x79AAF3938F22ed209f4b10D278797e1A674D475F",
-      "startBlock": "34320503",
-      "name" : "U2U_BARK"
+    "erc721EnnuiCat": {
+      "address": "0xb3b77d1da0664a3f0b5c9cdbe58684b81e38b3b8",
+      "startBlock": "29124137",
+      "name" : "EC"
     },       
     "erc721marketplace": {
-      "address": "0xcC84E04388B201b49Bb3a5C9cc6Bf7907024A589"
+      "address": "0x77700afc1183e520f6ce28e5ee95411cc88cf36b"
     },
     "erc1155marketplace": {
-      "address": "0xe6B23f494ca1e49fE76cc3A606bfbAB45585AB43"
+      "address": "0x46948c71e0b09ddddc8e7feed92332dd5b19b5fa"
     }
 }
