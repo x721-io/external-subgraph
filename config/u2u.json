@@ -1,39 +1,14 @@
 {
   "network": "mainnet",
-  "erc721Avatar": {
-    "address": "0x40432f201FAd1ed97352e807522454836178Fc5F",
-    "startBlock": "22473900",
-    "name" : "AVATAR_NFT"
-  },
-  "erc721TShirt": {
-    "address": "0xF64Fb1CA7F302739C509C4a8346bA48bcaCab845",
-    "startBlock": "25948835",
-    "name" : "U2U_TSHIRT_2024"
-  },
-  "erc721Hamster": {
-    "address": "0x91f2f3E0daE8446327c54FB4c974aB5A72b82445",
-    "startBlock": "27505104",
-    "name" : "U2U_HAMSTER_2024"
-  },
-  "erc1155Food": {
-    "address": "0x176581dBb0A5D0CcbB7395f2AAfD63E52e3936D7",
-    "startBlock": "17929869",
-    "name" : "FOOD_NFT"
-  },
-  "erc721HSH": {
-    "address": "0x807770a57C4a1379AF99660b9124aa2c599CF679",
-    "startBlock": "27505104",
-    "name" : "U2U_HSH_2024"
-  }, 
-  "erc721Bark": {
-    "address": "0x79AAF3938F22ed209f4b10D278797e1A674D475F",
-    "startBlock": "34320503",
-    "name" : "U2U_BARK"
-  },       
+  "erc721u2uxbitget": {
+    "address": "0x2ac49144a804e1f8652e1a0c1bad90606ac2094a",
+    "startBlock": "20946102",
+    "name" : "U2U Network x Bitget Wallet"
+  },     
   "erc721marketplace": {
-    "address": "0x52B9AbD261bB733b44b06148FD30F40290A6E017"
+    "address": "0x80a2d549e5e5d32e0f009c3a23422d89777f5eed"
   },
   "erc1155marketplace": {
-    "address": "0x571E3b002Ee611Fb0Fd240C0cA2C85B6DD4E7E33"
+    "address": "0xc4b56a14c2cc7300391d4d9fa30c7a2a1f1a76b2"
   }
 }
