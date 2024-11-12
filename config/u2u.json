@@ -6,9 +6,9 @@
     "name" : "U2U Network x Bitget Wallet"
   },     
   "erc721marketplace": {
-    "address": "0x80a2d549e5e5d32e0f009c3a23422d89777f5eed"
+    "address": "0x948bb8360ca57d61004e6e24862d5510dc1d25be"
   },
   "erc1155marketplace": {
-    "address": "0xc4b56a14c2cc7300391d4d9fa30c7a2a1f1a76b2"
+    "address": "0x873d2c86044c44aa29209250bdbf46d381124fa5"
   }
 }
