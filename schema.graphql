@@ -27,3 +27,18 @@ type ERC721Token @entity {
   createdAt: BigInt!
   updatedAt: BigInt!
 }
+
+type Contract @entity {
+	id: ID!
+	contract: String!
+	count: BigInt!
+}
+
+
+type OwnerContract @entity {
+	id: ID!
+	user: String!
+	contract: String!
+	count: BigInt!
+	timestamp: BigInt!
+}

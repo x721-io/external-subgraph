@@ -1,6 +1,6 @@
 import { TransferBatch, TransferSingle, ERC1155, URI } from "../../generated/ERC1155External/ERC1155";
 import {DEAD, ZERO} from "../const";
-import { fetchOrCreateNFT1155, fetchOrCreateNFTOwnerBalance, generateCombineKey } from "../utils";
+import { fetchOrCreateNFT1155, fetchOrCreateNFTOwnerBalance, generateCombineKey, updateOwner1155 } from "../utils";
 import { log } from "@graphprotocol/graph-ts";
 import { ERC1155Token } from "../../generated/schema";
 import { BigInt } from "@graphprotocol/graph-ts"
@@ -23,7 +23,7 @@ export function tokenTransfer(event: TransferSingle): void {
   // }
   
     let nft = fetchOrCreateNFT1155(event.params.id.toString(), event.block.timestamp, event.address.toHexString());
-  
+    updateOwner1155(event.params.from, event.params.to, event.address, event.params.id.toString(),event.params.value,event.block.timestamp,'ERC1155');  
     let nftOwnerBalanceFrom = fetchOrCreateNFTOwnerBalance(event.params.id.toString(), event.params.from.toHexString(), event.block.timestamp,event.address.toHexString());
     let nftOwnerBalanceTo = fetchOrCreateNFTOwnerBalance(event.params.id.toString(), event.params.to.toHexString(), event.block.timestamp, event.address.toHexString());
   
@@ -87,9 +87,10 @@ export function tokenTransferBatch(event: TransferBatch): void {
   // }
     for (let i = 0; i < event.params.ids.length; i++) {
       let nft = fetchOrCreateNFT1155(event.params.ids[i].toString(), event.block.timestamp, event.address.toHexString());
+      updateOwner1155(event.params.from, event.params.to, event.address,event.params.ids[i].toString(),event.params.values[i],event.block.timestamp,'ERC1155');
   
-    let nftOwnerBalanceFrom = fetchOrCreateNFTOwnerBalance(event.params.ids[i].toString(), event.params.from.toHexString(), event.block.timestamp, event.address.toHexString());
-    let nftOwnerBalanceTo = fetchOrCreateNFTOwnerBalance(event.params.ids[i].toString(), event.params.to.toHexString(), event.block.timestamp, event.address.toHexString());
+      let nftOwnerBalanceFrom = fetchOrCreateNFTOwnerBalance(event.params.ids[i].toString(), event.params.from.toHexString(), event.block.timestamp, event.address.toHexString());
+      let nftOwnerBalanceTo = fetchOrCreateNFTOwnerBalance(event.params.ids[i].toString(), event.params.to.toHexString(), event.block.timestamp, event.address.toHexString());
   
     if (event.params.from == event.params.to) {
       return;

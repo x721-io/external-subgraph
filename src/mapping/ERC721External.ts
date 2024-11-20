@@ -1,9 +1,11 @@
 import { ERC721Token} from './../../generated/schema';
 import {ERC721, Transfer, } from "../../generated/ERC721External/ERC721";
-import { generateCombineKey } from '../utils';
+import { generateCombineKey, updateOwner721 } from '../utils';
 import { ContractAddress } from '../enum';
+import { Address, BigInt, log } from "@graphprotocol/graph-ts";
 
 export function handleTransfer(event: Transfer): void {
+  updateOwner721(event.params.from, event.params.to, event.address, event.params.tokenId.toString(),BigInt.fromI32(1),event.block.timestamp,'ERC721');
   tokenTransfer(event);
 }
 export function tokenTransfer(event: Transfer): void {
